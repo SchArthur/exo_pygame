@@ -97,6 +97,7 @@ def pngToMNSL(filepath):
     print(file_img.size)  # Get the width and hight of the image for iterating over
 
     file_out.write('MNSL\n')
+    file_out.write('# fichier cree avec PNGtoCompressedMNSL.py de SchArthur \n')
     
     color_count = len(color_dict)
     size_string = str(file_img.size[0]) + ' ' + str(file_img.size[1]) + ' ' + str(color_count) + '\n'
@@ -145,4 +146,3 @@ def getRGBHEX(pixelRGB) -> str:
 # Converti le fichier 'test.png' en un fichier compressé test.mnsl
 # ------------------------ATTENTION------------------------
 # test.png ne doit pas contenir plus de 16 couleurs differentes
-pngToMNSL('nah_id_win')

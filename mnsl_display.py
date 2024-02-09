@@ -2,15 +2,22 @@
 import pygame
 import random
 import pbm_loader
+import convert
 
-img_to_load = 'nah_id_win'
+img_to_load = 'gigachad'
 img_format = 'mnsl'
 
 running = True
 
 class newGame:
     def __init__(self, width = 800, height = 600, running = True) -> None:
-        self.image = pbm_loader.newImage(img_to_load+'.'+img_format)
+        try :
+            self.image = pbm_loader.newImage(img_to_load+'.'+img_format)
+            print('opening file')
+        except FileNotFoundError:
+            print('creating file')
+            convert.pngToMNSL(img_to_load)
+            self.image = pbm_loader.newImage(img_to_load+'.'+img_format)
         width = self.image.img_x
         height = self.image.img_y
         # pygame setup
