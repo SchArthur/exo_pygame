@@ -3,8 +3,8 @@ import pygame
 import random
 import pbm_loader
 
-img_to_load = 'chat'
-img_format = 'mns'
+img_to_load = 'nah_id_win'
+img_format = 'mnsl'
 
 running = True
 
@@ -36,6 +36,8 @@ class newGame:
 
     def run(self, running = True):
         self.running = running 
+        self.screen.fill("white")
+        self.image.drawImg(self.screen)
         while self.running:
             # poll for events
             # pygame.QUIT event means the user clicked X to close your window
@@ -47,11 +49,9 @@ class newGame:
                     self.running = False
 
             # fill the screen with a color to wipe away anything from last frame
-            self.screen.fill("white")
             # for pixel in self.pixels:
             #     self.screen.set_at(pixel, "black")
             # RENDER YOUR GAME HERE
-            self.image.drawImg(self.screen)
             # flip() the display to put your work on screen
             pygame.display.flip()
 
