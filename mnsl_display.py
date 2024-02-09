@@ -59,5 +59,4 @@ class newGame:
 
         pygame.quit()
 
-
 jeu = newGame()  
